@@ -6,9 +6,9 @@
 //     """
 // }
 
-def call(String awsAccountId, String region, String ecrRepoName){
+def call(String aws_accout_id, String region, String ecr_repoName){
     sh """
-        trivy image ${awsAccountId}.dkr.ecr.${region}.amazonaws.com/${ecrRepoName}:latest > scan.txt
+        trivy image ${aws_accout_id}.dkr.ecr.${region}.amazonaws.com/${ecr_repoName}:latest > scan.txt
         cat scan.txt
     """
 }
